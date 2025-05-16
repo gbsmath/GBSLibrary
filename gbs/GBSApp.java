@@ -28,6 +28,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 
 /*
@@ -144,6 +145,12 @@ public class GBSApp extends JPanel implements ActionListener
     super.setOpaque(true);
     super.setBackground(Color.WHITE);
     super.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 16));
+    try {
+      UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
     defaultLM = super.getLayout();
   }
   
